@@ -4,7 +4,7 @@
 
 // eslint-disable-next-line fb-www/complexity
 const data = (() => {
-  const url = prompt('Please enter deltoid URL');
+  // const url = prompt('Please enter deltoid URL');
   let subtitle;
   let subSectionLabel;
 
@@ -14,8 +14,12 @@ const data = (() => {
     return Math.round(val * digits) / digits;
   }
   
+  const url = document.querySelector('._2phz').firstElementChild.innerText.split('\n')[1];
+  
   let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
   exp_info.click();
+  
+  
 
   const metadata = Array.from(
     document.querySelectorAll('._lkn')[1].querySelectorAll('tr'),
