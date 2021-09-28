@@ -13,6 +13,9 @@ const data = (() => {
 
     return Math.round(val * digits) / digits;
   }
+  
+  let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
+  exp_info.click();
 
   const metadata = Array.from(
     document.querySelectorAll('._lkn')[1].querySelectorAll('tr'),
@@ -24,7 +27,7 @@ const data = (() => {
     key.match('MDF Metrics|MDF Tags'),
   );
   const metrics = metricInfo[1].split(', ');
-
+  
   let collectionName;
   if (metrics.length > 1) {
     collectionName = `${metrics[0]} and ${metrics.length - 1} ${
