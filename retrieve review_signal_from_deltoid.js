@@ -14,7 +14,9 @@ const data = (() => {
     return Math.round(val * digits) / digits;
   }
   
+  document.querySelector('[aria-label="Share"]').click();
   const url = document.querySelector('._2phz').firstElementChild.innerText.split('\n')[1];
+  
   
   let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
   exp_info.click();
