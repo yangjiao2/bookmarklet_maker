@@ -16,8 +16,10 @@ const data = (() => {
   
   let share_button = document.querySelector('[aria-label="Share"]');
   share_button.click();
-  const url = document.querySelector('._2phz').firstElementChild.innerText.split('\n')[1];
-  
+  setTimeout(function() {
+  console.log('Good luck!');
+}, 500);
+  url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
   
   let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
   exp_info.click();
