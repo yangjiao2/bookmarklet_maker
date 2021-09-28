@@ -7,21 +7,24 @@ const data = (() => {
   // const url = prompt('Please enter deltoid URL');
   let subtitle;
   let subSectionLabel;
-
+  let url;
   function round(val) {
     const digits = Math.pow(10, 2);
 
     return Math.round(val * digits) / digits;
   }
   
-  document.querySelector('[aria-label="Share"]').click();
+  let share_button = document.querySelector('[aria-label="Share"]');
+  share_button.click();
   const url = document.querySelector('._2phz').firstElementChild.innerText.split('\n')[1];
   
   
   let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
   exp_info.click();
   
-  
+  if (url == null) {
+    throw new Error('No url found');
+  }
 
   const metadata = Array.from(
     document.querySelectorAll('._lkn')[1].querySelectorAll('tr'),
