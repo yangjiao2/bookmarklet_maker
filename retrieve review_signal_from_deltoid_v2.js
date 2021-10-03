@@ -39,8 +39,8 @@ const dataGetter = (() => {
 //   console.log(url);
 //   url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
 //   console.log(url);
-//     url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
-  url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
+  url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
+//   url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
 
   
   console.log('url...' + url);
