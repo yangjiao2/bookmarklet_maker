@@ -5,7 +5,10 @@
 // eslint-disable-next-line fb-www/complexity
 (function () {
   const SECONDS_IN_DAYS = 60 * 60 * 24;
-
+  const FBLITE_CORE = ['lite_interfaces:fblite:android:sharing:original_broadcast_post', 'lite_interfaces:fblite:android:messaging:growth:message_sends', 'performance:server_perf:overall:tao_get_keys_www_tier', 'core_app:ecosystem:sessions:core_session_count:fblite_android', 'lite_interfaces:fblite:kaios:visitation:dap', 'lite_interfaces:fblite:perf:server:cpu_time', 'lite_interfaces:fblite:android:startup:avg:successful:long_combined:overall', 'lite_interfaces:fblite:android:visitation:dap', 'lite_interfaces:fblite:kaios:visitation:map', 'lite_interfaces:fblite:perf:server:session_size:unified:all', 'groups:meaningfulness:meaningful_people', 'lite_interfaces:fblite:kaios:time_spent:overall', 'core_growth:visitation:dap:facebook_fblite_web', 'performance:server_perf:overall:server_instructions_www_tier', 'lite_interfaces:fblite:android:visitation:map', 'lite_interfaces:instagram:visitation:dap', 'lite_interfaces:fblite:android:time_spent:overall', 'lite_interfaces:fblite:android:reliability:client_errors:by_type', 'lite_interfaces:fblite:android:interactions:reactions', 'core_growth:visitation:map:facebook_fblite_web'];
+  const FBLITE_CORE_DIAGNOSTICS = ['lite_interfaces:fblite:perf:client_memory:by_app_state', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_2s', 'lite_interfaces:fblite:perf:server:session_size:gateway:all', 'performance:server_perf:overall:tao_get_keys_www_tier', 'lite_interfaces:fblite:perf:server:sessions_number', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:responsive:exclude_back_navigation_share', 'lite_interfaces:fblite:perf:server:session_size:appsrv:all', 'lite_interfaces:fblite:android:navigations:share:all:fail_rate:overall:exclude_back_navigation', 'lite_interfaces:fblite:android:navigations:avg:all:ttrc:exclude_back_navigation', 'lite_interfaces:fblite:android:startup:ratio:success_rate:overall', 'lite_interfaces:fblite:perf:server:cpu_time', 'lite_interfaces:fblite:android:startup:avg:successful:long_combined:overall', 'lite_interfaces:fblite:perf:server:session_size:unified:all_capped', 'lite_interfaces:fblite:perf:server:latency_ms', 'lite_interfaces:fblite:perf:server:session_size:unified:all', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:slow:exclude_back_navigation_share', 'sharing:composer:post_success_rate_by_interface', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_5s:overall', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_loading_rate', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:fluid:exclude_back_navigation_share', 'performance:server_perf:overall:server_instructions_www_tier', 'lite_interfaces:fblite:perf:server:session_length', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_cancel_loads', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_successful_loads', 'performance:server_perf:fblite:app_latency_ms', 'lite_interfaces:fblite:android:navigations:avg:all:ttrc', 'lite_interfaces:fblite:perf:footprint:total', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_8s', 'lite_interfaces:fblite:android:reliability:client_errors:by_type', 'lite_interfaces:fblite:android:reliability:client_errors:java_ooms', 'lite_interfaces:fblite:android:navigations:cnt:all:overall'];
+  const FBLITE_PERF_CORE =  ['lite_interfaces:fblite:perf:client_memory:by_app_state', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_2s', 'lite_interfaces:fblite:perf:server:session_size:gateway:all', 'performance:server_perf:overall:tao_get_keys_www_tier', 'lite_interfaces:fblite:perf:server:sessions_number', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:responsive:exclude_back_navigation_share', 'lite_interfaces:fblite:perf:server:session_size:appsrv:all', 'lite_interfaces:fblite:android:navigations:share:all:fail_rate:overall:exclude_back_navigation', 'lite_interfaces:fblite:android:navigations:avg:all:ttrc:exclude_back_navigation', 'lite_interfaces:fblite:android:startup:ratio:success_rate:overall', 'lite_interfaces:fblite:perf:server:cpu_time', 'lite_interfaces:fblite:android:startup:avg:successful:long_combined:overall', 'lite_interfaces:fblite:perf:server:session_size:unified:all_capped', 'lite_interfaces:fblite:perf:server:latency_ms', 'lite_interfaces:fblite:perf:server:session_size:unified:all', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:slow:exclude_back_navigation_share', 'sharing:composer:post_success_rate_by_interface', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_5s:overall', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_loading_rate', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:fluid:exclude_back_navigation_share', 'performance:server_perf:overall:server_instructions_www_tier', 'lite_interfaces:fblite:perf:server:session_length', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_cancel_loads', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_successful_loads', 'performance:server_perf:fblite:app_latency_ms', 'lite_interfaces:fblite:android:navigations:avg:all:ttrc', 'lite_interfaces:fblite:perf:footprint:total', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_8s', 'lite_interfaces:fblite:android:reliability:client_errors:by_type', 'lite_interfaces:fblite:android:reliability:client_errors:java_ooms', 'lite_interfaces:fblite:android:navigations:cnt:all:overall'];
+  
   const type =
     document.querySelectorAll('._7mgb [aria-pressed="true"]')[0].innerText ===
     'QE'
@@ -269,6 +272,49 @@
       label: 'Photos',
       metricNames: ['search:serp:overall', 'search:serp:time_spent:overall'],
       platformFilter: true,
+    },
+    // perf
+    {
+      collections: [],
+      filters: [],
+      label: 'Client Perf TTBR',
+      metricNames: ['search:serp:perf:client:ttbr_lt_1000_rate:serp', 'search:serp:perf:client:ttbr_lt_1000_rate:by_interface_serp'],
+      platformFilter: false,
+    },
+    {
+      collections: ['search:capacity_v2'],
+      filters: [],
+      label: 'Capacity v2',
+      metricNames: [],
+      platformFilter: false,
+    },
+    {
+      collections: [],
+      filters: [],
+      label: 'FBLite Core',
+      metricNames: FBLITE_CORE,
+      platformFilter: false,
+    },
+    {
+      collections: [],
+      filters: [],
+      label: 'FBLite Core (Diagnostics)',
+      metricNames: FBLITE_CORE_DIAGNOSTICS,
+      platformFilter: false,
+    },
+    {
+      collections: [],
+      filters: [],
+      label: 'FBLite Perf Core',
+      metricNames: FBLITE_PERF_CORE,
+      platformFilter: false,
+    },
+    {
+      collections: ['search:webicapacity'],
+      filters: [],
+      label: 'Search Webicapacity',
+      metricNames: [],
+      platformFilter: false,
     },
   ];
 
