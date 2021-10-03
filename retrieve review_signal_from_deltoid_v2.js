@@ -2,8 +2,8 @@
 
 'use strict';
 
-let url = 'url';
-let data = '---';
+let url = null;
+let data = '---data---';
 
 let share_button = document.querySelector('[aria-label="Share"]');
 share_button.click();
@@ -12,17 +12,17 @@ let exp_info  = document.querySelector('[aria-label="experiment and query inform
 exp_info.click();
 
 
-const copyToClipboard = str => {
-  const el = document.createElement('textarea');
-  el.value = str;
-  el.setAttribute('readonly', '');
-  el.style.position = 'absolute';
-  el.style.left = '-9999px';
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-};
+// const copyToClipboard = str => {
+//   const el = document.createElement('textarea');
+//   el.value = str;
+//   el.setAttribute('readonly', '');
+//   el.style.position = 'absolute';
+//   el.style.left = '-9999px';
+//   document.body.appendChild(el);
+//   el.select();
+//   document.execCommand('copy');
+//   document.body.removeChild(el);
+// };
 
 // eslint-disable-next-line fb-www/complexity
 const dataGetter = (() => {
@@ -36,12 +36,17 @@ const dataGetter = (() => {
     return Math.round(val * digits) / digits;
   }
 
-  console.log(url);
-  url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
-  console.log(url);
+//   console.log(url);
+//   url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
+//   console.log(url);
+//     url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
+  url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
+
+  
+  console.log('url...' + url);
   share_button.click();
   
-  let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
+//   let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
 //   exp_info.click();
   
   if (url == null) {
@@ -194,32 +199,48 @@ const dataGetter = (() => {
     .join('\n');
 });
 
-setTimeout(dataGetter, 1000);
-setTimeout(() => {
-  console.log(data);
-  
-  /* Copy the text  */
-  
-  const copyToClipboard = str => {
-    const el = document.createElement('textarea');
-    el.value = str;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '12px';
-    el.style.width = '1000px'; 
-    el.style.height='150px';
-    
-    exp_info.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-//     document.body.removeChild(el);
-  };
 
+
+/* Copy the text  */
   
-  copyToClipboard(data);
-  
-  share_button.click();
-  exp_info.click();
-  
-//   alert(data);
-}, 1200);
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '12px';
+  el.style.width = '1000px'; 
+  el.style.height= '170px';
+  let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
+
+  exp_info.appendChild(el);
+  el.style.zIndex = 4;
+  el.style.top = '100px';
+  el.select();
+  document.execCommand('copy');
+//     document.body.removeChild(el);
+};
+
+let complete = false;
+const intervalId = setInterval(() => {
+  complete = document.querySelectorAll('._yyt')[2].innerText == 'Query Results (100%)';
+  console.log('Incomplete..');
+  if (complete == true) {
+    setTimeout(dataGetter, 100);
+
+    setTimeout(() => {
+      console.log(data);
+      console.log(url);
+      copyToClipboard(data);
+
+      share_button.click();
+      exp_info.click();
+
+    //   alert(data);
+    }, 1200);
+    clearInterval(intervalId);
+  }
+}, 500);
+
+
+
