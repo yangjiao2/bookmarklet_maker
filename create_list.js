@@ -163,6 +163,12 @@
       platformFilter: true,
     },
     {
+      collections: ['search:serp:results'],
+      filters: [],
+      metricNames: [],
+      platformFilter: true,
+    },
+    {
       collections: ['search:value:overview'],
       filters: [],
       metricNames: [],
@@ -289,6 +295,14 @@
       platformFilter: false,
     },
     {
+      collections: ['search:webicapacity'],
+      filters: [],
+      label: 'Search Webicapacity',
+      metricNames: [],
+      platformFilter: false,
+    },
+    
+    {
       collections: [],
       filters: [],
       label: 'FBLite Core',
@@ -309,13 +323,7 @@
       metricNames: FBLITE_PERF_CORE,
       platformFilter: false,
     },
-    {
-      collections: ['search:webicapacity'],
-      filters: [],
-      label: 'Search Webicapacity',
-      metricNames: [],
-      platformFilter: false,
-    },
+
   ];
 
   const platforms = ['comet_www', 'fblite_android'];
