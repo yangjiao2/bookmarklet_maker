@@ -6,10 +6,10 @@ let url = null;
 let data = '---data---';
 
 let share_button = document.querySelector('[aria-label="Share"]');
-share_button.click();
+
 
 let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
-exp_info.click();
+
 
 
 // const copyToClipboard = str => {
@@ -226,7 +226,10 @@ const intervalId = setInterval(() => {
   complete = document.querySelectorAll('._yyt')[2].innerText == 'Query Results (100%)';
   console.log('Incomplete..');
   if (complete == true) {
-    setTimeout(dataGetter, 100);
+    share_button.click();
+    exp_info.click();
+    
+    setTimeout(dataGetter, 1000);
 
     setTimeout(() => {
       console.log(data);
