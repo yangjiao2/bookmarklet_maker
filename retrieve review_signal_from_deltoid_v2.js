@@ -25,14 +25,11 @@ const dataGetter = (() => {
 //   url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
 
   
-  console.log('url...' + url);
   share_button.click();
   
-//   let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
-//   exp_info.click();
   
   if (url == null) {
-    div_count = document.querySelectorAll('._2phz').length;
+    let div_count = document.querySelectorAll('._2phz').length;
     url = document.querySelectorAll('._2phz')[div_count - 1].innerText.match('[\n](.*)[\n]')[1];
     // url = prompt('Please enter deltoid URL');
     // throw new Error('No url found');
