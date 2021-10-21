@@ -200,9 +200,6 @@ const copyToClipboard = str => {
 };
 
 let complete = false;
-let query_button = document.querySelector('[aria-label="Run Query"]');
-query_button.click();
-
 const intervalId = setInterval(() => {
   complete = document.querySelectorAll('._yyt')[2].innerText == 'Query Results (100%)';
   console.log('Running (Incomplete)..');
@@ -210,7 +207,6 @@ const intervalId = setInterval(() => {
     
     exp_info.click();
     share_button.click();
-    
     
     setTimeout(dataGetter, 1000);
     setTimeout(() => {
