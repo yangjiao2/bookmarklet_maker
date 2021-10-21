@@ -6,25 +6,10 @@ let url = null;
 let data = '---data---';
 
 let share_button = document.querySelector('[aria-label="Share"]');
-
-
 let exp_info  = document.querySelector('[aria-label="experiment and query information"]');
 
 
 
-// const copyToClipboard = str => {
-//   const el = document.createElement('textarea');
-//   el.value = str;
-//   el.setAttribute('readonly', '');
-//   el.style.position = 'absolute';
-//   el.style.left = '-9999px';
-//   document.body.appendChild(el);
-//   el.select();
-//   document.execCommand('copy');
-//   document.body.removeChild(el);
-// };
-
-// eslint-disable-next-line fb-www/complexity
 const dataGetter = (() => {
   // const url = prompt('Please enter deltoid URL');
   let subtitle;
@@ -36,9 +21,6 @@ const dataGetter = (() => {
     return Math.round(val * digits) / digits;
   }
 
-//   console.log(url);
-//   url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
-//   console.log(url);
   url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
 //   url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
 
@@ -51,7 +33,7 @@ const dataGetter = (() => {
   
   if (url == null) {
     url = prompt('Please enter deltoid URL');
-    throw new Error('No url found');
+    // throw new Error('No url found');
   }
 
   const metadata = Array.from(
@@ -224,10 +206,12 @@ const copyToClipboard = str => {
 let complete = false;
 const intervalId = setInterval(() => {
   complete = document.querySelectorAll('._yyt')[2].innerText == 'Query Results (100%)';
-  console.log('Incomplete..');
+  console.log('Running (Incomplete)..');
   if (complete == true) {
-    share_button.click();
+    
     exp_info.click();
+    share_button.click();
+    
     
     setTimeout(dataGetter, 1000);
 
@@ -239,7 +223,6 @@ const intervalId = setInterval(() => {
       share_button.click();
       exp_info.click();
 
-    //   alert(data);
     }, 1200);
     clearInterval(intervalId);
   }
