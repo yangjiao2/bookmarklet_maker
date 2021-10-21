@@ -355,7 +355,7 @@
 
   let platforms = ['comet_www', 'fblite_android'];
   let platform_chosen = prompt('Please enter platform: "comet_www", "fblite_android"');
-  if (platform_chosen !== null or platform_chosen !== '') {
+  if (platform_chosen !== '') {
     platforms = [platform_chosen];
   }
 
