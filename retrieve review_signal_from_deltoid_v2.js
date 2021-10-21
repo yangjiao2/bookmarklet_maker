@@ -17,16 +17,13 @@ const dataGetter = (() => {
 
   function round(val) {
     const digits = Math.pow(10, 2);
-
     return Math.round(val * digits) / digits;
   }
 
   url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
 //   url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
 
-  
-  share_button.click();
-  
+  share_button.click();  
   
   if (url == null) {
     let div_count = document.querySelectorAll('._2phz').length;
@@ -203,6 +200,9 @@ const copyToClipboard = str => {
 };
 
 let complete = false;
+let query_button = document.querySelector('[aria-label="Run Query"]');
+query_button.click();
+
 const intervalId = setInterval(() => {
   complete = document.querySelectorAll('._yyt')[2].innerText == 'Query Results (100%)';
   console.log('Running (Incomplete)..');
@@ -213,7 +213,6 @@ const intervalId = setInterval(() => {
     
     
     setTimeout(dataGetter, 1000);
-
     setTimeout(() => {
       console.log(data);
       console.log(url);
