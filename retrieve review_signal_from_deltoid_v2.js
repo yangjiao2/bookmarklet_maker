@@ -32,7 +32,9 @@ const dataGetter = (() => {
 //   exp_info.click();
   
   if (url == null) {
-    url = prompt('Please enter deltoid URL');
+    div_count = document.querySelectorAll('._2phz').length;
+    url = document.querySelectorAll('._2phz')[div_count - 1].innerText.match('[\n](.*)[\n]')[1];
+    // url = prompt('Please enter deltoid URL');
     // throw new Error('No url found');
   }
 
