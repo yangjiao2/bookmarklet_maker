@@ -8,6 +8,8 @@
   const FBLITE_CORE = ['lite_interfaces:fblite:android:sharing:original_broadcast_post', 'lite_interfaces:fblite:android:messaging:growth:message_sends', 'performance:server_perf:overall:tao_get_keys_www_tier', 'core_app:ecosystem:sessions:core_session_count:fblite_android', 'lite_interfaces:fblite:kaios:visitation:dap', 'lite_interfaces:fblite:perf:server:cpu_time', 'lite_interfaces:fblite:android:startup:avg:successful:long_combined:overall', 'lite_interfaces:fblite:android:visitation:dap', 'lite_interfaces:fblite:kaios:visitation:map', 'lite_interfaces:fblite:perf:server:session_size:unified:all', 'groups:meaningfulness:meaningful_people', 'lite_interfaces:fblite:kaios:time_spent:overall', 'core_growth:visitation:dap:facebook_fblite_web', 'performance:server_perf:overall:server_instructions_www_tier', 'lite_interfaces:fblite:android:visitation:map', 'lite_interfaces:instagram:visitation:dap', 'lite_interfaces:fblite:android:time_spent:overall', 'lite_interfaces:fblite:android:reliability:client_errors:by_type', 'lite_interfaces:fblite:android:interactions:reactions', 'core_growth:visitation:map:facebook_fblite_web'];
   const FBLITE_CORE_DIAGNOSTICS = ['lite_interfaces:fblite:perf:client_memory:by_app_state', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_2s', 'lite_interfaces:fblite:perf:server:session_size:gateway:all', 'performance:server_perf:overall:tao_get_keys_www_tier', 'lite_interfaces:fblite:perf:server:sessions_number', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:responsive:exclude_back_navigation_share', 'lite_interfaces:fblite:perf:server:session_size:appsrv:all', 'lite_interfaces:fblite:android:navigations:share:all:fail_rate:overall:exclude_back_navigation', 'lite_interfaces:fblite:android:navigations:avg:all:ttrc:exclude_back_navigation', 'lite_interfaces:fblite:android:startup:ratio:success_rate:overall', 'lite_interfaces:fblite:perf:server:cpu_time', 'lite_interfaces:fblite:android:startup:avg:successful:long_combined:overall', 'lite_interfaces:fblite:perf:server:session_size:unified:all_capped', 'lite_interfaces:fblite:perf:server:latency_ms', 'lite_interfaces:fblite:perf:server:session_size:unified:all', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:slow:exclude_back_navigation_share', 'sharing:composer:post_success_rate_by_interface', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_5s:overall', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_loading_rate', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:fluid:exclude_back_navigation_share', 'performance:server_perf:overall:server_instructions_www_tier', 'lite_interfaces:fblite:perf:server:session_length', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_cancel_loads', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_successful_loads', 'performance:server_perf:fblite:app_latency_ms', 'lite_interfaces:fblite:android:navigations:avg:all:ttrc', 'lite_interfaces:fblite:perf:footprint:total', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_8s', 'lite_interfaces:fblite:android:reliability:client_errors:by_type', 'lite_interfaces:fblite:android:reliability:client_errors:java_ooms', 'lite_interfaces:fblite:android:navigations:cnt:all:overall'];
   const FBLITE_PERF_CORE =  ['lite_interfaces:fblite:perf:client_memory:by_app_state', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_2s', 'lite_interfaces:fblite:perf:server:session_size:gateway:all', 'performance:server_perf:overall:tao_get_keys_www_tier', 'lite_interfaces:fblite:perf:server:sessions_number', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:responsive:exclude_back_navigation_share', 'lite_interfaces:fblite:perf:server:session_size:appsrv:all', 'lite_interfaces:fblite:android:navigations:share:all:fail_rate:overall:exclude_back_navigation', 'lite_interfaces:fblite:android:navigations:avg:all:ttrc:exclude_back_navigation', 'lite_interfaces:fblite:android:startup:ratio:success_rate:overall', 'lite_interfaces:fblite:perf:server:cpu_time', 'lite_interfaces:fblite:android:startup:avg:successful:long_combined:overall', 'lite_interfaces:fblite:perf:server:session_size:unified:all_capped', 'lite_interfaces:fblite:perf:server:latency_ms', 'lite_interfaces:fblite:perf:server:session_size:unified:all', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:slow:exclude_back_navigation_share', 'sharing:composer:post_success_rate_by_interface', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_5s:overall', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_loading_rate', 'lite_interfaces:fblite:android:navigations:share:all:success_rate:fluid:exclude_back_navigation_share', 'performance:server_perf:overall:server_instructions_www_tier', 'lite_interfaces:fblite:perf:server:session_length', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_cancel_loads', 'lite_interfaces:fblite:android:perf:media:images:loading:ratio:bad_successful_loads', 'performance:server_perf:fblite:app_latency_ms', 'lite_interfaces:fblite:android:navigations:avg:all:ttrc', 'lite_interfaces:fblite:perf:footprint:total', 'lite_interfaces:fblite:android:startup:ratio:success_rate:less_8s', 'lite_interfaces:fblite:android:reliability:client_errors:by_type', 'lite_interfaces:fblite:android:reliability:client_errors:java_ooms', 'lite_interfaces:fblite:android:navigations:cnt:all:overall'];
+  const GUIDELINE = ['search:usage:volume_without_mp_watch:overall', 'search:typeahead:sessions_search_glyph:overall', 'core_app:ecosystem:sessions:core_session_count:fb_major_apps', 'core_app:ecosystem:sessions:core_session_count:fb_iphone', 'core_app:ecosystem:sessions:core_session_count:fb_android', 'core_app:ecosystem:sessions:core_session_count:fb_iphone_android', 'core_app:ecosystem:sessions:core_session_count:comet_www', 'local:usr_bvi_2021_h1:search_referred', 'local:usr_bvi_components_2021_h1:search_referred', 'groups:growth:cedau:overall', 'video:planned_viewing:video_home_watch_time_ms:overall', 'video:search:metrics:participation_rate:organic_search_explore', 'search:friending:requests_sent_accepted:overall', 'marketplace:bsg_mli_fast:overall', 'marketplace:search:mp_tab_search_mli_global_search_overall:overall', 'groups:meaningfulness:meaningful_joins:by_source', 'search:serp:with_reformulation_rate:overall', 'search:serp:with_reformulation:overall', 'search:serp:overall', 'search:serp:time_spent:overall', 'search:serp:15s_sessions:overall', 'search:serp:with_reformulation:by_reformulation_type', 'search:quality:avg_serp_session_total_time_spent_ms:overall', 'search:quality:avg_serp_session_time_spent_no_downstream_ms:overall', 'groups:membership:approved:by_source', 'shops:consumer:facebook:shops:daily:shops_visitors:overall', 'shops:consumer:facebook:shops:monthly:his:us_only', 'games:live_gaming_watch_time', 'games:instant:core:sessions', 'video:search:metrics:time_spent_total_s:overall', 'search:qpl:serp:ttbr_lt_1000_rate', 'search:qpl:serp:ttbr_lt_1000_rate:by_interface', 'search:serp:perf:client:ttbr_lt_1000_rate:serp', 'search:serp:perf:client:ttbr_lt_1000_rate:by_interface_serp'];
+  
   
   const type =
     document.querySelectorAll('._7mgb [aria-pressed="true"]')[0].innerText ===
@@ -32,6 +34,13 @@
     {
       collections: ['search:growth'],
       filters: [],
+    },
+    {
+      collections: [],
+      filters: [],
+      label: 'Guideline',
+      metricNames: GUIDELINE,
+      platformFilter: false,
     },
     {
       collections: [],
@@ -355,6 +364,7 @@
 
   let platforms = ['comet_www', 'fblite_android'];
   let platform_chosen = prompt('Please enter platform: "comet_www", "fblite_android"');
+  let open_tab_chosen = prompt('Please enter whether to open new tab: "y", "n"');
   if (platform_chosen !== '') {
     platforms = [platform_chosen];
   }
@@ -481,8 +491,9 @@
         `${label ?? collections.concat(metricNames ?? []).join(', ')}:`,
         url,
       );
-      
-      window.open(url, '_blank');
+      if (open_tab_chosen === 'y'){
+        window.open(url, '_blank');
+      }
       
     }
   }
