@@ -113,6 +113,13 @@
                 ],
                 platformFilter: true,
             },
+            {                 
+                collections: ['search:typeahead:clicks', 'search:typeahead:usage'],
+                filters: [],
+                label: 'Typeahead clicks and usage',
+                metricNames: [],
+                platformFilter: true,
+            },
             {
                 collections: ['search:typeahead:sts_v1'],
                 filters: [],
