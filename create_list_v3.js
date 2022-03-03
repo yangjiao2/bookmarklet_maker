@@ -387,10 +387,158 @@
                 {
                     collections: ['search:serp_pagination_perf'],
                     filters: [],
-                    label: 'SErp Pagination Perf',
+                    label: 'Serp Pagination Perf',
                     metricNames: [],
                     platformFilter: false,
                 },
+                {
+                    collections: [],
+                    filters: [],
+                    label: 'FB app topline',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['core_app:ecosystem:sessions:core_session_count:us_and_canada:fb_major_apps'],
+                    filters: [],
+                    label: 'core_app:ecosystem:sessions:core_session_count:us_and_canada:fb_major_apps',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['core_growth:visitation:dap:overall_facebook'],
+                    filters: [],
+                    label: 'core_growth:visitation:dap:overall_facebook',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['core_app:ecosystem:sessions:core_session_count:fb_major_apps'],
+                    filters: [],
+                    label: 'core_app:ecosystem:sessions:core_session_count:fb_major_apps',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: [],
+                    filters: [],
+                    label: 'Search Performance',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:qpl:serp:ttbr_lt_1000_rate'],
+                    filters: [],
+                    label: 'search:qpl:serp:ttbr_lt_1000_rate',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:search:server_perf:server_cpu_instructions'],
+                    filters: [],
+                    label: 'search:search:server_perf:server_cpu_instructions',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:capacity:unicorn_total_cpu_kcycles_search'],
+                    filters: [],
+                    label: 'search:capacity:unicorn_total_cpu_kcycles_search',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: [],
+                    filters: [],
+                    label: 'Search values',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:downstream:content_actions:overall'],
+                    filters: [],
+                    label: 'search:downstream:content_actions:overall',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['groups:growth:cedau:overall'],
+                    filters: [],
+                    label: 'groups:growth:cedau:overall',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['local:user_bvi_scores_h1_2022'],
+                    filters: [],
+                    label: 'local:user_bvi_scores_h1_2022',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:friending_0d:requests_sent_accepted:overall'],
+                    filters: [],
+                    label: 'search:friending_0d:requests_sent_accepted:overalls',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: [],
+                    filters: [],
+                    label: 'Search Growth',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:dap:overall'],
+                    filters: [],
+                    label: 'search:dap:overall',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:usage:volume_without_mp_watch:overall'],
+                    filters: [],
+                    label: 'search:usage:volume_without_mp_watch:overall',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:sequences:2019_q3:total_sequences_goal_tracking'],
+                    filters: [],
+                    label: 'search:sequences:2019_q3:total_sequences_goal_tracking',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: [],
+                    filters: [],
+                    label: 'SERP metrics',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:serp:result_click_rate:overall'],
+                    filters: [],
+                    label: 'search:serp:result_click_rate:overall',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:serp:time_spent:overall'],
+                    filters: [],
+                    label: 'search:serp:time_spent:overall',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                {
+                    collections: ['search:sequences:2019_q3:quality_clicks_rate'],
+                    filters: [],
+                    label: 'search:sequences:2019_q3:quality_clicks_rate',
+                    metricNames: [],
+                    platformFilter: false,
+                },
+                
             ];
 
             let platforms = ['comet_www', 'fblite_android'];
@@ -448,6 +596,9 @@
                         metricNames,
                         platformFilter,
                     } of finalMetrics) {
+                    if (collections.length == 0 %% metricNames.length == 0) {
+                       console.log(`---- ${label} ----`);
+                    }
                     const config = {
                         ads_metric_request: {
                             breakdown: null,
