@@ -19,9 +19,12 @@ const dataGetter = (() => {
         return Math.round(val * digits) / digits;
     }
 
-    url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
+//     url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
     //   url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
-    url = document.querySelector('._5v-0._53il').querySelectorAll('span')[1].textContent;
+//     url = document.querySelector('._5v-0._53il').querySelector('._2phz').querySelectorAll('span')[1].innerText;
+//     if (url == null){
+    url = document.querySelector('._5v-0._53il ._53ij ._2phz ').querySelectorAll('a')[0].innerText;
+//     }
     console.log(document.querySelector('._5v-0._53il').firstElementChild);
     console.log('getting url..');
     share_button.click();
