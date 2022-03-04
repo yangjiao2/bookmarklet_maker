@@ -21,10 +21,12 @@ const dataGetter = (() => {
 
     url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
     //   url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
-
+    console.log('getting url..');
     share_button.click();
 
     if (url == null) {
+        console.log('getting url...');
+        
         let div_count = document.querySelectorAll('._2phz').length;
         let now = new Date().getTime();
         const UrlIntervalId = setInterval(() => {
@@ -233,6 +235,7 @@ setTimeout(() => {
 
 
             setTimeout(dataGetter, 1000);
+            
             setTimeout(() => {
                 console.log(data);
                 console.log(url);
