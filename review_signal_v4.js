@@ -21,6 +21,8 @@ const dataGetter = (() => {
 
     url = document.querySelector('._5v-0._53il').firstElementChild.innerText.split('\n')[1];
     //   url = document.querySelector('._2phz').innerText.match('[\n](.*)[\n]')[1];
+    url = document.querySelector('._5v-0._53il').querySelectorAll('span')[1].textContent;
+    console.log(document.querySelector('._5v-0._53il').firstElementChild);
     console.log('getting url..');
     share_button.click();
 
